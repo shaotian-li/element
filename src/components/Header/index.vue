@@ -5,10 +5,11 @@
 <template>
     <div class="header">
         <div class="header_top">
-            <span>欢迎， 李小征</span>
+            <span class="header_title" v-if="this.$store.state.headTitle">vue 通用管理系统</span>
+            <span class="header_name">欢迎， 李小征</span>
             <a href="javascript:;">退出</a> 
         </div>
-        <el-row class="header_bottom">
+        <el-row class="header_bottom" v-if="this.$store.state.head">
             <el-col :span="4" class="header_title">
                 <span>首页</span>
             </el-col>
@@ -32,7 +33,7 @@ export default {
       time: "",
       weather: "",
       dayPictureUrl: "",
-      temperature:''
+      temperature: ""
     };
   },
   created() {
@@ -56,7 +57,7 @@ export default {
             let data = res.results[0].weather_data[0];
             this.weather = data.weather;
             this.dayPictureUrl = data.dayPictureUrl;
-            this.temperature = data.temperature
+            this.temperature = data.temperature;
           }
         });
     }

@@ -34,7 +34,7 @@
             </el-form>
         </el-card>
         <el-card>
-            <el-button size="small" type="warning">订单详情</el-button>
+            <el-button size="small" type="warning" @click="openOrderDetail">订单详情</el-button>
             <el-button size="small" type="warning" @click="handleConfirm">结束订单</el-button>
         </el-card>
         <div class="content_warp">
@@ -168,6 +168,16 @@ export default {
         });
       } else {
         this.orderDialog = true;
+      }
+    },
+    openOrderDetail() {
+      if (this.templateRadio == "") {
+        this.$confirm("请选择一条数据", "提示", {
+          confirmButtonText: "确定",
+          type: "warning"
+        });
+      } else {
+        window.open("/detail");
       }
     }
   }

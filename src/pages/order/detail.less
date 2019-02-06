@@ -1,0 +1,43 @@
+@import '../../style/default.less';
+
+.detail{
+    .header{
+        .header_top{
+            .header_name{
+                color: @colorA;
+            }
+        }
+    }
+    .detail_items{
+        margin-left: 90px;
+        padding: 25px 50px 25px 0;
+        border-bottom: 1px solid @colorE;
+        &:last-child{
+            border: none;
+        }
+        .item_title{
+            font-size: 20px;
+            color: @colorF;
+            margin: 20px 0;   
+        }
+        .detail_form{
+            margin-left: 100px;
+            li{
+                font-size: 15px;
+                margin: 20px 0;
+                line-height: 20px;
+                color: @colorG;
+                .detail_form_left{
+                    color: @colorH;
+                }
+                .detail_form_content{
+                    padding-left: 40px;
+                }
+            }
+        }
+    }
+    .detail_map{
+        height: 450px;
+        margin: 25px 31px 0;
+    }
+}

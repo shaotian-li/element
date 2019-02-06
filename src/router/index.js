@@ -14,6 +14,8 @@ import BasicTable from '@/pages/Table/basicTable.vue'
 import HighTable from '@/pages/Table/highTable.vue'
 import Order from '@/pages/order'
 import City from '@/pages/city'
+import User from '@/pages/user'
+import Detail from '@/pages/order/detail.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -29,6 +31,12 @@ export default new Router({
       name: 'Login',
       hidden: true,
       component: Login
+    },
+    {
+      path: '/detail',
+      name: 'Detail',
+      hidden: true,
+      component: Detail
     },
     {
       path: '/menu',
@@ -123,6 +131,17 @@ export default new Router({
         path: '/order',
         name: '订单管理',
         component: Order
+      }]
+    },
+    {
+      path: '/menu',
+      name: '员工管理',
+      leaf: true,
+      component: Menu,
+      children: [{
+        path: '/user',
+        name: '员工管理',
+        component: User
       }]
     }
   ]
