@@ -16,6 +16,7 @@ import Order from '@/pages/order'
 import City from '@/pages/city'
 import User from '@/pages/user'
 import Detail from '@/pages/order/detail.vue'
+import BikeMap from '@/pages/bikeMap'
 Vue.use(Router)
 
 export default new Router({
@@ -142,6 +143,17 @@ export default new Router({
         path: '/user',
         name: '员工管理',
         component: User
+      }]
+    },
+    {
+      path:'/menu',
+      name:'车辆地图',
+      leaf:true,
+      component:Menu,
+      children:[{
+        path:'/bikemap',
+        name:'员工管理',
+        component: BikeMap
       }]
     }
   ]
